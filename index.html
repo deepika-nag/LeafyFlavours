@@ -106,7 +106,7 @@
       inset: 0;
       background-image: url('images/hero.jpg');
       background-size: cover;
-      background-position: center 30%;
+      background-position: center center;
       filter: brightness(0.45);
     }
 
@@ -338,7 +338,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 40%;
+      object-position: center center;
     }
 
     .exp-hero-overlay {
@@ -353,19 +353,19 @@
     .exp-hero-label {
       background: var(--gold);
       color: var(--teal-dark);
-      font-size: 0.7rem;
+      font-size: 1rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.3rem 0.8rem;
+      padding: 0.45rem 1.1rem;
       border-radius: 2rem;
       display: inline-block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
     }
 
     .exp-hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(2rem, 5vw, 3rem);
       color: var(--white);
       line-height: 1.2;
     }
@@ -759,6 +759,221 @@
       text-decoration: none;
     }
 
+    /* ── EXPERIENCE OVERVIEW CARDS ──────────────────────── */
+    .exp-overview {
+      background: var(--cream);
+      padding: 4rem 1.5rem;
+    }
+
+    .exp-overview-header { text-align: center; margin-bottom: 2.5rem; }
+
+    .exp-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .exp-card {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(27,107,107,0.12);
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(27,107,107,0.22);
+    }
+
+    .exp-card-img {
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exp-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .exp-card-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.55) 100%);
+    }
+
+    .exp-card-badge {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      background: var(--gold);
+      color: var(--teal-dark);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 1rem;
+    }
+
+    .exp-card-body {
+      padding: 1.2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .exp-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--teal);
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-card-sub {
+      font-size: 0.75rem;
+      color: var(--grey);
+      font-style: italic;
+      margin-bottom: 0.7rem;
+    }
+
+    .exp-card-best {
+      font-size: 0.76rem;
+      color: var(--gold-dark);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .exp-card-estimator {
+      border-top: 1px solid var(--teal-light);
+      padding-top: 0.8rem;
+    }
+
+    .exp-card-estimator label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .exp-card-estimator input {
+      width: 100%;
+      border: 1.5px solid var(--teal-light);
+      border-radius: 0.4rem;
+      padding: 0.45rem 0.7rem;
+      font-size: 0.9rem;
+      color: var(--dark);
+      outline: none;
+      font-family: 'Lato', sans-serif;
+      transition: border-color 0.2s;
+    }
+
+    .exp-card-estimator input:focus { border-color: var(--teal); }
+
+    .exp-card-price {
+      margin-top: 0.45rem;
+      font-size: 0.88rem;
+      color: var(--teal);
+      font-weight: 700;
+      min-height: 1.3em;
+    }
+
+    .exp-card-link {
+      display: block;
+      text-align: center;
+      margin-top: 0.9rem;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.55rem;
+      border-radius: 0.4rem;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+    }
+
+    .exp-card-link:hover { background: var(--teal-dark); }
+
+    .est-note {
+      font-size: 0.72rem;
+      color: var(--grey);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .est-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .est-field { flex: 1; }
+
+    .est-field label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .est-field input {
+      width: 100%;
+      border: 1.5px solid var(--teal-light);
+      border-radius: 0.4rem;
+      padding: 0.4rem 0.5rem;
+      font-size: 0.85rem;
+      color: var(--dark);
+      outline: none;
+      font-family: 'Lato', sans-serif;
+      transition: border-color 0.2s;
+    }
+
+    .est-field input:focus { border-color: var(--teal); }
+
+    .est-tiers { margin-bottom: 0.6rem; }
+
+    .est-tier-opt {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.35rem;
+      font-size: 0.74rem;
+      color: var(--dark);
+      cursor: pointer;
+      padding: 0.2rem 0;
+      line-height: 1.4;
+    }
+
+    .est-tier-opt input[type=radio] {
+      accent-color: var(--teal);
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .exp-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 500px) {
+      .exp-cards { grid-template-columns: 1fr; }
+    }
+
     /* ── RESPONSIVE ──────────────────────────────────── */
     @media (max-width: 680px) {
       .about-grid { grid-template-columns: 1fr; }
@@ -928,13 +1143,122 @@
   </div>
 </section>
 
-<!-- ── EXPERIENCES NAV ──────────────────────────────────── -->
-<nav class="exp-nav" id="experiences">
-  <a href="#street-table">The Street Table</a>
-  <a href="#karnataka-table">The Karnataka Table</a>
-  <a href="#elle-oota">Elle Oota Heritage Style</a>
-  <a href="#opening-act">The Opening Act</a>
-</nav>
+<!-- ── EXPERIENCE OVERVIEW ───────────────────────────────── -->
+<section class="exp-overview" id="experiences">
+  <div class="exp-overview-header">
+    <span class="section-label">Choose Your Experience</span>
+    <h2 class="section-title">Four Ways to Celebrate</h2>
+    <hr class="gold-rule" style="margin: 1rem auto;"/>
+    <p style="color: var(--grey); font-size: 0.95rem;">Enter your guest count below to see an approximate starting price.</p>
+  </div>
+  <div class="exp-cards">
+
+    <div class="exp-card">
+      <div class="exp-card-img">
+        <img src="images/street1.jpg" alt="The Street Table"/>
+        <div class="exp-card-img-overlay"></div>
+        <span class="exp-card-badge">Experience 1</span>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-name">The Street Table</div>
+        <div class="exp-card-sub">Galli Ka Andaaz, Aapke Ghar Mein</div>
+        <div class="exp-card-best">Birthday parties · Baby showers · Haldi nights · Kitty parties</div>
+        <div class="exp-card-estimator">
+          <p class="est-note">Min. selection: 3 Chatpata Bites + 1 Hungry Centre = $18pp<br/>Optional platters: +$50 each</p>
+          <div class="est-row">
+            <div class="est-field">
+              <label>Guests (min. 10)</label>
+              <input type="number" id="guests-street" min="10" placeholder="e.g. 20" oninput="calcStreet()"/>
+            </div>
+            <div class="est-field">
+              <label>Platters</label>
+              <input type="number" id="platters-street" min="0" max="5" placeholder="0" oninput="calcStreet()"/>
+            </div>
+          </div>
+          <div class="exp-card-price" id="price-street"></div>
+        </div>
+        <a href="#street-table" class="exp-card-link">See Full Menu →</a>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-card-img">
+        <img src="images/karnataka1.jpg" alt="The Karnataka Table"/>
+        <div class="exp-card-img-overlay"></div>
+        <span class="exp-card-badge">Experience 2</span>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-name">The Karnataka Table</div>
+        <div class="exp-card-sub">Namma Oota, Namma Habba</div>
+        <div class="exp-card-best">Karnataka birthdays · Housewarmings · Naming ceremonies · Ugadi · Diwali</div>
+        <div class="exp-card-estimator">
+          <div class="est-tiers">
+            <label class="est-tier-opt"><input type="radio" name="tier-karn" value="14" checked onchange="calcKarnataka()"/> Tindi Habbada — 4 items — $14pp</label>
+            <label class="est-tier-opt"><input type="radio" name="tier-karn" value="24" onchange="calcKarnataka()"/> Namma Habba — 5 items — $24pp ★</label>
+            <label class="est-tier-opt"><input type="radio" name="tier-karn" value="37" onchange="calcKarnataka()"/> Rajara Bendige — 7 items — $37pp</label>
+          </div>
+          <div class="est-field">
+            <label>Guests (min. 10)</label>
+            <input type="number" id="guests-karnataka" min="10" placeholder="e.g. 20" oninput="calcKarnataka()"/>
+          </div>
+          <div class="exp-card-price" id="price-karnataka"></div>
+        </div>
+        <a href="#karnataka-table" class="exp-card-link">See Full Menu →</a>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-card-img">
+        <img src="images/elleoota.jpg" alt="Elle Oota Heritage Style"/>
+        <div class="exp-card-img-overlay"></div>
+        <span class="exp-card-badge">Experience 3</span>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-name">Elle Oota Heritage Style</div>
+        <div class="exp-card-sub">Traditional Karnataka Sit-Down</div>
+        <div class="exp-card-best">Intimate milestone celebrations · Parents' birthdays · Family visits · 8–20 guests</div>
+        <div class="exp-card-estimator">
+          <p class="est-note">6 courses, fully served at your table — $37 per person</p>
+          <div class="est-field">
+            <label>Guests (8–20)</label>
+            <input type="number" id="guests-elleoota" min="8" max="20" placeholder="e.g. 12" oninput="calcElleOota()"/>
+          </div>
+          <div class="exp-card-price" id="price-elleoota"></div>
+        </div>
+        <a href="#elle-oota" class="exp-card-link">See Full Menu →</a>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-card-img">
+        <img src="images/opening.jpg" alt="The Opening Act"/>
+        <div class="exp-card-img-overlay"></div>
+        <span class="exp-card-badge">The Opening Act</span>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-name">The Opening Act</div>
+        <div class="exp-card-sub">Starters + Style. You Handle the Mains.</div>
+        <div class="exp-card-best">You have mains sorted — we bring the styled starter spread that sets the mood</div>
+        <div class="exp-card-estimator">
+          <p class="est-note">Per-person starters from Street/Karnataka pricing<br/>+$50 per styled platter</p>
+          <div class="est-row">
+            <div class="est-field">
+              <label>Guests (min. 10)</label>
+              <input type="number" id="guests-opening" min="10" placeholder="e.g. 20" oninput="calcOpening()"/>
+            </div>
+            <div class="est-field">
+              <label>Platters</label>
+              <input type="number" id="platters-opening" min="0" max="5" placeholder="0" oninput="calcOpening()"/>
+            </div>
+          </div>
+          <div class="exp-card-price" id="price-opening"></div>
+        </div>
+        <a href="#opening-act" class="exp-card-link">See Details →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- ── EXPERIENCE 1: STREET TABLE ──────────────────────── -->
 <article class="exp" id="street-table">
@@ -1030,7 +1354,7 @@
         ✦ Best for: Karnataka birthdays · Housewarmings · Naming ceremonies · Ugadi · Diwali
       </div>
       <p class="exp-pitch">
-        "Your paati never catered a party. She cooked one. There's a difference.<br/><br/>
+        "Your Ajji never catered a party. She cooked one. There's a difference.<br/><br/>
         The Karnataka Table is the closest your Sydney celebration can get to a home-cooked
         Karnataka spread — without anyone spending three days in the kitchen. Kosumbri made
         fresh. Puliyogare that smells like a Sunday in Mysuru. Bonda soup that your oldest
@@ -1285,5 +1609,50 @@
   </p>
 </footer>
 
+<script>
+  function showPrice(id, text, warn) {
+    var el = document.getElementById(id);
+    el.textContent = text;
+    el.style.color = warn ? '#b38600' : 'var(--teal)';
+  }
+
+  function calcStreet() {
+    var g = parseInt(document.getElementById('guests-street').value) || 0;
+    var p = parseInt(document.getElementById('platters-street').value) || 0;
+    if (!g) { showPrice('price-street', '', false); return; }
+    if (g < 10) { showPrice('price-street', 'Minimum 10 guests', true); return; }
+    var total = (18 * g) + (50 * p);
+    var msg = 'Starts from $' + total;
+    if (p > 0) msg += ' (incl. ' + p + ' platter' + (p > 1 ? 's' : '') + ')';
+    showPrice('price-street', msg, false);
+  }
+
+  function calcKarnataka() {
+    var g = parseInt(document.getElementById('guests-karnataka').value) || 0;
+    var tier = parseInt(document.querySelector('input[name="tier-karn"]:checked').value);
+    if (!g) { showPrice('price-karnataka', '', false); return; }
+    if (g < 10) { showPrice('price-karnataka', 'Minimum 10 guests', true); return; }
+    showPrice('price-karnataka', 'Starts from $' + (tier * g), false);
+  }
+
+  function calcElleOota() {
+    var g = parseInt(document.getElementById('guests-elleoota').value) || 0;
+    if (!g) { showPrice('price-elleoota', '', false); return; }
+    if (g < 8) { showPrice('price-elleoota', 'Minimum 8 guests', true); return; }
+    if (g > 20) { showPrice('price-elleoota', 'Maximum 20 guests', true); return; }
+    showPrice('price-elleoota', 'Starts from $' + (37 * g), false);
+  }
+
+  function calcOpening() {
+    var g = parseInt(document.getElementById('guests-opening').value) || 0;
+    var p = parseInt(document.getElementById('platters-opening').value) || 0;
+    if (!g) { showPrice('price-opening', '', false); return; }
+    if (g < 10) { showPrice('price-opening', 'Minimum 10 guests', true); return; }
+    var total = (18 * g) + (50 * p);
+    var msg = 'Starts from $' + total;
+    if (p > 0) msg += ' (incl. ' + p + ' platter' + (p > 1 ? 's' : '') + ')';
+    showPrice('price-opening', msg, false);
+  }
+</script>
 </body>
 </html>
