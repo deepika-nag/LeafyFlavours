@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "project": "leafy-flavours-web-menu",
+  "workflow": {
+    "commit_style": "conventional",
+    "branch_strategy": "main-only",
+    "review_required": false,
+    "auto_deploy": true
+  },
+  "phases": {
+    "current": 1,
+    "total": 3
+  },
+  "preferences": {
+    "no_frameworks": true,
+    "no_build_step": true,
+    "mobile_editing": true,
+    "host": "github-pages"
+  }
+}

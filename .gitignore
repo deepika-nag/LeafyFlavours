@@ -1,0 +1,14 @@
+# Original source photos (keep locally, not needed in repo)
+*.heic
+*.HEIC
+2025-10-28*.jpg
+IMG_7686.jpg
+IMG_7702.jpg
+PXL_*.jpg
+preview_p*.jpg
+"Leafy Flavours Karnataka Menu.jpg"
+"Leafy favlours brand .png"
+LeafyLFavours chaats grazing menu.pdf
+
+# Claude internals
+.claude/
