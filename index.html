@@ -654,6 +654,68 @@
 
     .gallery-item:hover img { transform: scale(1.06); }
 
+    .gallery-sub {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-style: italic;
+      margin: 2rem 0 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── REVIEWS ─────────────────────────────────────────── */
+    .reviews {
+      background: var(--cream);
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 0;
+    }
+
+    @media (max-width: 680px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 4px 20px rgba(27,107,107,0.08);
+      border-top: 4px solid var(--gold);
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.8;
+      flex: 1;
+      margin-bottom: 1.2rem;
+    }
+
+    .review-quote::before { content: '\201C'; color: var(--gold); font-size: 2rem; line-height: 0; vertical-align: -0.4rem; margin-right: 0.2rem; }
+
+    .review-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--teal);
+    }
+
+    .review-via {
+      font-size: 0.75rem;
+      color: var(--grey);
+      margin-top: 0.15rem;
+    }
+
     /* ── THEME MATCHING ──────────────────────────────── */
     .themes {
       background: var(--white);
@@ -1101,7 +1163,7 @@
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-img">
-        <img src="images/about.jpg" alt="Leafy Flavours styled table setup"/>
+        <img src="images/what-we-do.jpg" alt="Leafy Flavours — what we do"/>
       </div>
       <div class="about-text">
         <span class="section-label">Who We Are</span>
@@ -1164,16 +1226,10 @@
         <div class="exp-card-sub">Galli Ka Andaaz, Aapke Ghar Mein</div>
         <div class="exp-card-best">Birthday parties · Baby showers · Haldi nights · Kitty parties</div>
         <div class="exp-card-estimator">
-          <p class="est-note">Min. selection: 2 Chatpata Bites + 1 Hungry Centre = $18pp<br/>Optional platters: +$50 each<br/>Want starters only? See The Opening Act ↓</p>
-          <div class="est-row">
-            <div class="est-field">
-              <label>Guests (min. 10)</label>
-              <input type="number" id="guests-street" min="10" placeholder="e.g. 20" oninput="calcStreet()"/>
-            </div>
-            <div class="est-field">
-              <label>Platters</label>
-              <input type="number" id="platters-street" min="0" max="5" placeholder="0" oninput="calcStreet()"/>
-            </div>
+          <p class="est-note">Min. selection: 2 Chatpata Bites + 1 Hungry Centre = $18pp</p>
+          <div class="est-field">
+            <label>Guests (min. 10)</label>
+            <input type="number" id="guests-street" min="10" placeholder="e.g. 20" oninput="calcStreet()"/>
           </div>
           <div class="exp-card-price" id="price-street"></div>
         </div>
@@ -1332,9 +1388,6 @@
         Minimum 10 guests. Contact us for your personalised quote.
       </div>
 
-      <div class="exp-note" style="margin-top: 0.7rem; background: var(--teal-light); border-color: var(--teal); color: var(--teal);">
-        <strong>Just starters?</strong> Choose The Opening Act — we bring the styled spread and you handle the mains. Same menu, same setup, you take all the credit.
-      </div>
     </div>
   </div>
 </article>
@@ -1423,7 +1476,7 @@
 <!-- ── EXPERIENCE 3: ELLE OOTA ──────────────────────────── -->
 <article class="exp" id="elle-oota">
   <div class="exp-hero">
-    <img src="images/elleoota.jpg" alt="Elle Oota Heritage Style — Karnataka sit-down experience"/>
+    <img src="images/sitdown-hero.jpg" alt="Elle Oota Heritage Style — Karnataka sit-down experience"/>
     <div class="exp-hero-overlay">
       <div>
         <div class="exp-hero-label">Experience 3</div>
@@ -1439,7 +1492,7 @@
       </div>
       <p class="exp-pitch">
         "Some meals you eat. Some meals you carry home in your chest.<br/><br/>
-        Elle Oota is a traditional Karnataka sit-down experience — served course by course, the way it was always meant to be. Your guests arrive to a table dressed in brass, with printed menus at each place. We set everything up, we serve, we take care of every detail.<br/><br/>
+        Elle Oota is a traditional Karnataka sit-down experience — course by course, the way it was always meant to be. Your guests arrive to a table dressed in brass, a welcome board at the entrance, and a printed menu at each place. We arrive early, we set everything up, and we care for every detail so you don't have to think about a thing.<br/><br/>
         12 items. 6 courses. The full rhythm of a proper Karnataka oota — in your home, for the people who matter.
         Because this isn't catering. This is a Karnataka celebration, done properly."
       </p>
@@ -1497,9 +1550,9 @@
       </div>
 
       <div class="exp-note" style="background: var(--teal-light); border-color: var(--teal); color: var(--teal); text-align: left; line-height: 1.8;">
-        <strong>What's included:</strong> Brass-styled table setup · Printed sit-down menu card per guest · All 6 courses served to your guests · Full pack-down<br/>
+        <strong>What's included:</strong> Welcome board · Brass-styled table setup · Decorations · Detailed printed menu card per guest · Full pack-down — we care for every detail<br/>
         <strong>Starts from $32 per person</strong> · Minimum 8 guests · Maximum 20 guests<br/>
-        <em>Happy to customise items to suit your occasion — just ask.</em>
+        <em>Travel fee applies based on your location. Happy to customise — just ask.</em>
       </div>
     </div>
   </div>
@@ -1537,15 +1590,55 @@
   <div class="section-inner">
     <span class="section-label">Our Work</span>
     <h2 class="section-title">Every Table Tells a Story</h2>
+
+    <p class="gallery-sub">The Street Table</p>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="images/gallery1.jpg" alt="Leafy Flavours event setup"/></div>
+      <div class="gallery-item"><img src="images/street1.jpg" alt="The Street Table setup"/></div>
       <div class="gallery-item"><img src="images/street2.jpg" alt="Masala Puri Station"/></div>
-      <div class="gallery-item"><img src="images/gallery3.jpg" alt="Outdoor Karnataka event"/></div>
+      <div class="gallery-item"><img src="images/gallery4.jpg" alt="Vada Pav Sliders"/></div>
+      <div class="gallery-item"><img src="images/gallery2.jpg" alt="Street food outdoor setup"/></div>
+    </div>
+
+    <p class="gallery-sub">The Karnataka Table</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/karnataka1.jpg" alt="Karnataka Table spread"/></div>
       <div class="gallery-item"><img src="images/karnataka2.jpg" alt="Karnataka bites close up"/></div>
-      <div class="gallery-item"><img src="images/gallery2.jpg" alt="Outdoor park setup"/></div>
-      <div class="gallery-item"><img src="images/gallery4.jpg" alt="Vada pav sliders setup"/></div>
-      <div class="gallery-item"><img src="images/about.jpg" alt="Styled indoor event table"/></div>
-      <div class="gallery-item"><img src="images/opening.jpg" alt="Themed event setup"/></div>
+      <div class="gallery-item"><img src="images/karnataka3.jpg" alt="Karnataka Table styled setup"/></div>
+      <div class="gallery-item"><img src="images/gallery3.jpg" alt="Karnataka outdoor event"/></div>
+    </div>
+
+    <p class="gallery-sub">Elle Oota — The Sit Down Experience</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/sitdown-hero.jpg" alt="Elle Oota sit-down experience"/></div>
+      <div class="gallery-item"><img src="images/sitdown4.jpg" alt="Sit down Karnataka dining"/></div>
+      <div class="gallery-item"><img src="images/gallery1.jpg" alt="Styled table setup"/></div>
+      <div class="gallery-item"><img src="images/opening.jpg" alt="Decorated event setup"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ─────────────────────────────────────────────── -->
+<section class="reviews">
+  <div class="section-inner">
+    <span class="section-label">What Our Customers Say</span>
+    <h2 class="section-title">The Moments They Remember</h2>
+    <hr class="gold-rule" style="margin: 1rem auto 2rem;"/>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-quote">"It was amazing — definitely add them to your menu! People will love it for sure. Everything was just perfect, we loved it all."</div>
+        <div class="review-name">Uttara</div>
+        <div class="review-via">via WhatsApp</div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"Thanks for yesterday, definitely had a blast! The yummy food, everything was amazing — specially the masala puri and churmuri slices brought back my childhood memories."</div>
+        <div class="review-name">Happy guest</div>
+        <div class="review-via">via WhatsApp</div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"Everyone loved all the dishes, Deepika — it was a super hit! Thank you so much for everything."</div>
+        <div class="review-name">Happy guest</div>
+        <div class="review-via">via WhatsApp</div>
+      </div>
     </div>
   </div>
 </section>
