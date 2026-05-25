@@ -531,7 +531,7 @@
 
     .choice-row {
       display: grid;
-      grid-template-columns: 130px 1fr;
+      grid-template-columns: 150px 1fr;
       border-radius: 0.4rem;
       overflow: hidden;
       margin-bottom: 0.4rem;
@@ -541,9 +541,9 @@
     .choice-row-label {
       background: var(--teal);
       color: var(--white);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -551,6 +551,7 @@
       text-align: center;
       text-transform: uppercase;
       line-height: 1.3;
+      word-break: break-word;
     }
 
     .choice-row-items {
@@ -565,7 +566,7 @@
     /* Course rows (Elle Oota) */
     .course-row {
       display: grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 145px 1fr;
       margin-bottom: 0.4rem;
       border-radius: 0.4rem;
       overflow: hidden;
@@ -583,11 +584,12 @@
 
     .course-name {
       color: var(--white);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
       text-align: center;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
+      word-break: break-word;
     }
 
     .course-sub {
@@ -1042,8 +1044,8 @@
       .about-img { order: -1; }
       .about-img img { height: 260px; }
       .why-grid { grid-template-columns: 1fr; }
-      .choice-row { grid-template-columns: 100px 1fr; }
-      .course-row { grid-template-columns: 100px 1fr; }
+      .choice-row { grid-template-columns: 110px 1fr; }
+      .course-row { grid-template-columns: 110px 1fr; }
       section { padding: 3.5rem 1.2rem; }
     }
 
@@ -1227,9 +1229,15 @@
         <div class="exp-card-best">Birthday parties · Baby showers · Haldi nights · Kitty parties</div>
         <div class="exp-card-estimator">
           <p class="est-note">Min. selection: 2 Chatpata Bites + 1 Hungry Centre = $18pp</p>
-          <div class="est-field">
-            <label>Guests (min. 10)</label>
-            <input type="number" id="guests-street" min="10" placeholder="e.g. 20" oninput="calcStreet()"/>
+          <div class="est-row">
+            <div class="est-field">
+              <label>Guests (min. 10)</label>
+              <input type="number" id="guests-street" min="10" placeholder="e.g. 20" oninput="calcStreet()"/>
+            </div>
+            <div class="est-field">
+              <label>Platters</label>
+              <input type="number" id="platters-street" min="0" max="5" placeholder="0" oninput="calcStreet()"/>
+            </div>
           </div>
           <div class="exp-card-price" id="price-street"></div>
         </div>
@@ -1249,8 +1257,8 @@
         <div class="exp-card-best">Karnataka birthdays · Housewarmings · Naming ceremonies · Ugadi · Diwali</div>
         <div class="exp-card-estimator">
           <div class="est-tiers">
-            <label class="est-tier-opt"><input type="radio" name="tier-karn" value="18" checked onchange="calcKarnataka()"/> Starter Spread — 4 items — $18pp</label>
-            <label class="est-tier-opt"><input type="radio" name="tier-karn" value="24" onchange="calcKarnataka()"/> The Full Celebration — 5 items — $24pp ★</label>
+            <label class="est-tier-opt"><input type="radio" name="tier-karn" value="16" checked onchange="calcKarnataka()"/> Starter Spread — from $16pp</label>
+            <label class="est-tier-opt"><input type="radio" name="tier-karn" value="24" onchange="calcKarnataka()"/> The Full Celebration — $24pp ★</label>
           </div>
           <div class="est-field">
             <label>Guests (min. 10)</label>
@@ -1353,6 +1361,7 @@
           Churmuri Slices <span class="dot">·</span>
           Pinwheel Samosas <span class="dot">·</span>
           Nippat <span class="dot">·</span>
+          Crispy Corn <span class="dot">·</span>
           Masala Corn Salsa <span class="dot">·</span>
           Guac Dips
         </div>
@@ -1426,8 +1435,17 @@
             <div class="tier-card-sub">Light bites to open the celebration</div>
           </div>
           <div class="tier-card-body">
-            <p class="tier-card-desc">Light and lovely — perfect as a starter spread, or pair with your own mains.</p>
-            <p class="tier-card-picks">2 Accompaniments + 2 Hot Off the Pan</p>
+            <p class="tier-card-desc">Light and lovely — perfect as starters, or pair with your own mains. Pick one path:</p>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.3rem;">
+              <div style="background: var(--gold-light); border-radius: 0.4rem; padding: 0.45rem 0.7rem; font-size: 0.8rem; border: 1px solid var(--gold);">
+                <span style="font-weight: 700; color: var(--gold-dark);">Balanced</span>
+                <span style="color: var(--grey);"> — 2 Accompaniments + 1 Hot Off + 1 Namma Special</span>
+              </div>
+              <div style="background: var(--teal-light); border-radius: 0.4rem; padding: 0.45rem 0.7rem; font-size: 0.8rem;">
+                <span style="font-weight: 700; color: var(--teal);">Light &amp; Fresh</span>
+                <span style="color: var(--grey);"> — 3 Accompaniments + 1 Namma Special</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="tier-card">
@@ -1453,7 +1471,11 @@
         </div>
         <div class="choice-row">
           <div class="choice-row-label">Hot Off the Pan</div>
-          <div class="choice-row-items">Dill Masala Vada · Aloo Bonda · Maida Pakoda · Bonda Soup · Mangalore Bajji · Akki Rotti · Chilli Bajji</div>
+          <div class="choice-row-items">Dill Masala Vada · Maddur Vade · Aloo Bonda · Maida Pakoda · Mangalore Bajji · Chilli Bajji</div>
+        </div>
+        <div class="choice-row">
+          <div class="choice-row-label" style="background: var(--gold-dark);">Namma Specials</div>
+          <div class="choice-row-items" style="background: var(--gold-light); color: var(--dark);">Bonda Soup · Akki Rotti · Masala Puri Cups · Rawa Idli · Shavige Bath · Nippat Masala · Tomato Cucumber Masala &nbsp;<span style="font-size: 0.78rem; color: var(--gold-dark); font-style: italic;">— quoted separately, ask us</span></div>
         </div>
         <div class="choice-row">
           <div class="choice-row-label">Heart of Karnataka</div>
@@ -1612,7 +1634,7 @@
       <div class="gallery-item"><img src="images/sitdown-hero.jpg" alt="Elle Oota sit-down experience"/></div>
       <div class="gallery-item"><img src="images/sitdown4.jpg" alt="Sit down Karnataka dining"/></div>
       <div class="gallery-item"><img src="images/sitdown2.jpg" alt="Elle Oota event setup"/></div>
-      <div class="gallery-item"><img src="images/elleoota.jpg" alt="Karnataka sit-down food"/></div>
+      <div class="gallery-item"><img src="images/sitdown3.jpg" alt="Karnataka sit-down food"/></div>
     </div>
   </div>
 </section>
