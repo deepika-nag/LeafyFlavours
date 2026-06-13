@@ -665,6 +665,58 @@
       letter-spacing: 0.02em;
     }
 
+    /* ── LIVE COUNTERS ───────────────────────────────────── */
+    .lc-counters {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+    @media (min-width: 720px) {
+      .lc-counters { grid-template-columns: repeat(3, 1fr); }
+    }
+    .counter-card {
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      border-radius: 0.8rem;
+      padding: 1.2rem 1.1rem;
+    }
+    .counter-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--teal);
+      margin-bottom: 0.15rem;
+    }
+    .counter-card-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 0.5rem;
+    }
+    .counter-card-desc {
+      font-size: 0.88rem;
+      color: var(--grey);
+      line-height: 1.55;
+    }
+    .lc-gallery .gallery-item.is-hidden { display: none; }
+    .see-more-wrap { text-align: center; margin-top: 1.5rem; }
+    .see-more-btn {
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 0.7rem 1.6rem;
+      border-radius: 2rem;
+      transition: background 0.2s;
+    }
+    .see-more-btn:hover { background: var(--gold-dark); }
+
     /* ── REVIEWS ─────────────────────────────────────────── */
     .reviews {
       background: var(--cream);
@@ -833,7 +885,7 @@
 
     .exp-cards {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
       gap: 1.2rem;
       max-width: 1200px;
       margin: 0 auto;
@@ -1211,7 +1263,7 @@
 <section class="exp-overview" id="experiences">
   <div class="exp-overview-header">
     <span class="section-label">Choose Your Experience</span>
-    <h2 class="section-title">Four Ways to Celebrate</h2>
+    <h2 class="section-title">Five Ways to Celebrate</h2>
     <hr class="gold-rule" style="margin: 1rem auto;"/>
     <p style="color: var(--grey); font-size: 0.95rem;">Enter your guest count below to see an approximate starting price.</p>
   </div>
@@ -1289,6 +1341,23 @@
           <div class="exp-card-price" id="price-elleoota"></div>
         </div>
         <a href="#elle-oota" class="exp-card-link">See Full Menu →</a>
+      </div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-card-img">
+        <img src="images/livecounter-dosa.jpg" alt="Live Counters — Mysuru Dosa Mela station"/>
+        <div class="exp-card-img-overlay"></div>
+        <span class="exp-card-badge">Experience 4</span>
+      </div>
+      <div class="exp-card-body">
+        <div class="exp-card-name">Live Counters</div>
+        <div class="exp-card-sub">Made Fresh, Right in Front of Your Guests</div>
+        <div class="exp-card-best">Dosa Mela · Karnataka-style Churmuri Chaat · Hot Chaat — cooked live at your venue</div>
+        <div class="exp-card-estimator">
+          <p class="est-note">Just contact us to enquire.<br/>Minimum 20 guests.</p>
+        </div>
+        <a href="#live-counters" class="exp-card-link">See the Counters →</a>
       </div>
     </div>
 
@@ -1471,15 +1540,15 @@
         </div>
         <div class="choice-row">
           <div class="choice-row-label">Hot Off the Pan</div>
-          <div class="choice-row-items">Dill Masala Vada · Maddur Vade · Aloo Bonda · Maida Pakoda · Mangalore Bajji · Chilli Bajji</div>
+          <div class="choice-row-items">Dill Masala Vada · Aloo Bonda · Maida Pakoda · Mangalore Bajji · Chilli Bajji</div>
         </div>
         <div class="choice-row">
           <div class="choice-row-label" style="background: var(--gold-dark);">Namma Specials</div>
-          <div class="choice-row-items" style="background: var(--gold-light); color: var(--dark);">Bonda Soup · Akki Rotti · Masala Puri Cups · Rawa Idli · Shavige Bath · Nippat Masala · Tomato Cucumber Masala &nbsp;<span style="font-size: 0.78rem; color: var(--gold-dark); font-style: italic;">— quoted separately, ask us</span></div>
+          <div class="choice-row-items" style="background: var(--gold-light); color: var(--dark);">Maddur Vade · Bonda Soup · Akki Rotti · Masala Puri Cups · Rawa Idli · Shavige Bath · Nippat Masala · Tomato Cucumber Masala &nbsp;<span style="font-size: 0.78rem; color: var(--gold-dark); font-style: italic;">— quoted separately, ask us</span></div>
         </div>
         <div class="choice-row">
           <div class="choice-row-label">Heart of Karnataka</div>
-          <div class="choice-row-items">Gojjavalaki Boats · Mavinkayi Chitranna Donne · Puliyogare Batlu · Rawa Idli Bites · Veg Pulao · Shavige Bath</div>
+          <div class="choice-row-items">Gojjavalaki Boats · Mavinkayi Chitranna Donne · Puliyogare Batlu · Veg Pulao · Bisibele Bath</div>
         </div>
         <div class="choice-row">
           <div class="choice-row-label">Sweet Farewell</div>
@@ -1575,6 +1644,70 @@
         <strong>What's included:</strong> Welcome board · Brass-styled table setup · Decorations · Detailed printed menu card per guest · Full pack-down — we care for every detail<br/>
         <strong>Starts from $32 per person</strong> · Minimum 8 guests · Maximum 20 guests<br/>
         <em>Travel fee applies based on your location. Happy to customise — just ask.</em>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ── EXPERIENCE 4: LIVE COUNTERS ──────────────────────── -->
+<article class="exp" id="live-counters" style="background: var(--white);">
+  <div class="exp-hero">
+    <img src="images/livecounter-dosa.jpg" alt="Leafy Flavours live counter — Mysuru Dosa Mela"/>
+    <div class="exp-hero-overlay">
+      <div>
+        <div class="exp-hero-label">Experience 4</div>
+        <div class="exp-hero-title">Live Counters</div>
+        <div class="exp-hero-sub">Made Fresh, Right in Front of Your Guests</div>
+      </div>
+    </div>
+  </div>
+  <div class="exp-body" style="background: var(--white);">
+    <div class="exp-body-inner">
+      <div class="exp-best-for">
+        ✦ Best for: Big celebrations · Weddings · Milestone birthdays · Festive gatherings
+      </div>
+      <p class="exp-pitch">
+        "There's a different kind of magic when the food is made right there — the sizzle
+        of dosa on the pan, churmuri tossed to order, chaat built in front of you.<br/><br/>
+        Our live counters turn your celebration into an experience. Your guests gather,
+        watch, and eat it hot — the way street corners in Karnataka have always done it.
+        We bring the station, the styling, and the show."
+      </p>
+
+      <div class="lc-counters">
+        <div class="counter-card">
+          <div class="counter-card-name">Dosa Counter</div>
+          <div class="counter-card-tag">Mysuru Dosa Mela</div>
+          <div class="counter-card-desc">Benne masala dosa, set dosa, uttapam and more — crisped to order on a live tava, served hot off the pan.</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-card-name">Churmuri Chaat Counter</div>
+          <div class="counter-card-tag">Karnataka Style</div>
+          <div class="counter-card-desc">Puffed rice tossed fresh with raw mango, carrot, onion and that signature Karnataka spice — crunchy, tangy, made as you watch.</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-card-name">Hot Chaat Counter</div>
+          <div class="counter-card-tag">Built to Order</div>
+          <div class="counter-card-desc">A live chaat station layering crunch, chutneys and masala — every plate assembled fresh, right in front of your guests.</div>
+        </div>
+      </div>
+
+      <div class="exp-note">
+        Just contact us to enquire. Minimum 20 guests.
+      </div>
+
+      <p class="gallery-sub" style="color: var(--teal); text-align: center;">From Our Counters</p>
+      <div class="gallery-grid lc-gallery">
+        <div class="gallery-item"><img src="images/livecounter-dosa.jpg" alt="Mysuru Dosa Mela menu board styled with brass lamp"/></div>
+        <div class="gallery-item"><img src="images/livecounter6.jpg" alt="Leafy Flavours dosa counter set up under the pergola"/></div>
+        <div class="gallery-item"><img src="images/livecounter1.jpg" alt="Churmuri chaat counter ingredients laid out fresh"/></div>
+        <div class="gallery-item"><img src="images/livecounter4.jpg" alt="A plate of Karnataka-style churmuri chaat"/></div>
+        <div class="gallery-item is-hidden"><img src="images/livecounter2.jpg" alt="Live churmuri chaat counter in action"/></div>
+        <div class="gallery-item is-hidden"><img src="images/livecounter3.jpg" alt="Styled live counter with festive bunting and lights"/></div>
+        <div class="gallery-item is-hidden"><img src="images/livecounter5.jpg" alt="Dosa Mela counter styled with brass and floral details"/></div>
+      </div>
+      <div class="see-more-wrap">
+        <button class="see-more-btn" type="button" onclick="toggleLcGallery(this)">See More Photos →</button>
       </div>
     </div>
   </div>
@@ -1766,6 +1899,17 @@
     var msg = 'Starts from $' + total;
     if (p > 0) msg += ' (incl. ' + p + ' platter' + (p > 1 ? 's' : '') + ')';
     showPrice('price-opening', msg, false);
+  }
+
+  function toggleLcGallery(btn) {
+    var expanded = btn.getAttribute('data-expanded') === 'true';
+    document.querySelectorAll('.lc-gallery .gallery-item').forEach(function (item, i) {
+      if (i >= 4) {
+        item.classList.toggle('is-hidden', expanded);
+      }
+    });
+    btn.setAttribute('data-expanded', expanded ? 'false' : 'true');
+    btn.textContent = expanded ? 'See More Photos →' : 'Show Fewer Photos';
   }
 </script>
 </body>
