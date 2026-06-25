@@ -1331,12 +1331,12 @@
       <div class="exp-card-body">
         <div class="exp-card-name">Elle Oota Heritage Style</div>
         <div class="exp-card-sub">Traditional Karnataka Sit-Down</div>
-        <div class="exp-card-best">Intimate milestone celebrations · Parents' birthdays · Family visits · 8–20 guests</div>
+        <div class="exp-card-best">Intimate milestone celebrations · Parents' birthdays · Family visits · 10–20 guests</div>
         <div class="exp-card-estimator">
           <p class="est-note">6 courses · 12 items · brass-styled sit-down setup — $32 per person</p>
           <div class="est-field">
-            <label>Guests (8–20)</label>
-            <input type="number" id="guests-elleoota" min="8" max="20" placeholder="e.g. 12" oninput="calcElleOota()"/>
+            <label>Guests (10–20)</label>
+            <input type="number" id="guests-elleoota" min="10" max="20" placeholder="e.g. 12" oninput="calcElleOota()"/>
           </div>
           <div class="exp-card-price" id="price-elleoota"></div>
         </div>
@@ -1579,7 +1579,7 @@
   <div class="exp-body">
     <div class="exp-body-inner">
       <div class="exp-best-for">
-        ✦ Best for: Intimate milestone celebrations · Parents' birthdays · Family visits · 8–20 guests
+        ✦ Best for: Intimate milestone celebrations · Parents' birthdays · Family visits · 10–20 guests
       </div>
       <p class="exp-pitch">
         "Some meals you eat. Some meals you carry home in your chest.<br/><br/>
@@ -1642,7 +1642,7 @@
 
       <div class="exp-note" style="background: var(--teal-light); border-color: var(--teal); color: var(--teal); text-align: left; line-height: 1.8;">
         <strong>What's included:</strong> Welcome board · Brass-styled table setup · Decorations · Detailed printed menu card per guest · Full pack-down — we care for every detail<br/>
-        <strong>Starts from $32 per person</strong> · Minimum 8 guests · Maximum 20 guests<br/>
+        <strong>Starts from $32 per person</strong> · Minimum 10 guests · Maximum 20 guests<br/>
         <em>Travel fee applies based on your location. Happy to customise — just ask.</em>
       </div>
     </div>
@@ -1885,7 +1885,7 @@
   function calcElleOota() {
     var g = parseInt(document.getElementById('guests-elleoota').value) || 0;
     if (!g) { showPrice('price-elleoota', '', false); return; }
-    if (g < 8) { showPrice('price-elleoota', 'Minimum 8 guests', true); return; }
+    if (g < 10) { showPrice('price-elleoota', 'Minimum 10 guests', true); return; }
     if (g > 20) { showPrice('price-elleoota', 'Maximum 20 guests', true); return; }
     showPrice('price-elleoota', 'Starts from $' + (32 * g), false);
   }
