@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Unlimited Dosa Feast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Lato:wght@400;700;900&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --green:#1C6B45;
+    --green-dark:#114F31;
+    --green-deep:#0C3E26;
+    --yellow:#F5B800;
+    --yellow-soft:#FFD24D;
+    --yellow-light:#FFF4CC;
+    --cream:#FFFDF3;
+    --ink:#22302a;
+    --grey:#5d6b62;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Lato',sans-serif;
+    background:
+      radial-gradient(circle at 18% 0%, #1c6b45 0%, transparent 55%),
+      radial-gradient(circle at 92% 100%, #2a7d54 0%, transparent 50%),
+      #0c3e26;
+    display:flex;justify-content:center;
+    padding:26px;
+    color:var(--ink);
+  }
+
+  /* ── POSTER : ~A4 portrait ── */
+  .poster{
+    width:1040px;
+    background:var(--cream);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 26px 70px rgba(0,0,0,0.45);
+    border:7px solid var(--yellow);
+  }
+
+  /* HEADER */
+  .head{
+    position:relative;
+    background:linear-gradient(160deg,var(--green) 0%,var(--green-dark) 100%);
+    color:#fff;text-align:center;
+    padding:30px 40px 24px;
+  }
+  .head::after{
+    content:"";position:absolute;left:0;right:0;bottom:-1px;height:16px;
+    background:radial-gradient(circle at 13px -3px, var(--cream) 12px, transparent 13px) repeat-x;
+    background-size:26px 16px;
+  }
+  .kicker{
+    display:inline-block;font-weight:900;letter-spacing:0.3em;font-size:13px;
+    text-transform:uppercase;color:var(--green-deep);background:var(--yellow);
+    padding:7px 18px;border-radius:30px;margin-bottom:14px;
+  }
+  .title{
+    font-family:'Playfair Display',serif;font-weight:900;font-size:64px;line-height:0.96;
+    text-shadow:0 3px 0 rgba(0,0,0,0.12);
+  }
+  .title .pop{ color:var(--yellow-soft); }
+  .tag{
+    margin-top:12px;font-size:15px;letter-spacing:0.2em;text-transform:uppercase;
+    color:rgba(255,255,255,0.85);font-weight:700;
+  }
+
+  /* PHOTO + PRICE */
+  .photo-wrap{ position:relative; }
+  /* default = collab crop: shifted down so the board's "Leafy flavours" script is cropped out */
+  .photo{ width:100%;height:300px;object-fit:cover;object-position:center 84%;display:block; }
+  /* branded crop: show the full Mysuru Dosa Mela board (brand on board is on-brand here) */
+  body.branded .photo{ object-position:center 58%; }
+
+  /* brand line (branded version only) */
+  .brand{ display:none; }
+  body.branded .brand{
+    display:block;font-family:'Playfair Display',serif;font-style:italic;
+    font-size:20px;color:var(--yellow-soft);margin-bottom:10px;letter-spacing:0.02em;
+  }
+  /* contact line (branded version only) */
+  .contact{ display:none; }
+  body.branded .contact{
+    display:block;margin-top:12px;font-size:18px;font-weight:900;letter-spacing:0.04em;color:#fff;
+  }
+  body.branded .contact span{ color:var(--yellow-soft); }
+  .price-badge{
+    position:absolute;right:34px;bottom:-44px;width:158px;height:158px;border-radius:50%;
+    background:var(--yellow);border:6px solid var(--cream);
+    box-shadow:0 12px 30px rgba(0,0,0,0.3);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;transform:rotate(-7deg);z-index:3;
+  }
+  .price-badge .from{ font-size:11px;font-weight:900;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-dark); }
+  .price-badge .amt{ font-family:'Playfair Display',serif;font-weight:900;font-size:50px;line-height:0.9;color:var(--green-deep); }
+  .price-badge .pp{ font-size:12px;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-dark);margin-top:2px; }
+
+  /* INTRO */
+  .intro{
+    text-align:center;font-size:17px;line-height:1.6;color:var(--grey);
+    max-width:760px;margin:34px auto 24px;padding:0 44px;
+  }
+  .intro b{ color:var(--green-dark); }
+
+  /* MAIN 2-COLUMN */
+  .grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:22px;
+    padding:0 40px 6px;align-items:start;
+  }
+  .block{ margin-bottom:22px; }
+  .block:last-child{ margin-bottom:0; }
+  .label{
+    font-family:'Playfair Display',serif;font-weight:800;font-size:24px;color:var(--green-dark);
+    text-align:center;margin-bottom:2px;
+  }
+  .sub{
+    text-align:center;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--yellow);font-weight:900;margin-bottom:14px;
+  }
+
+  /* dosa menu */
+  .menu-card{ background:#fff;border:2px dashed var(--yellow);border-radius:16px;padding:16px 22px; }
+  .menu-card ul{ list-style:none; }
+  .menu-card li{
+    display:flex;align-items:center;gap:11px;font-size:17px;font-weight:700;color:var(--ink);
+    padding:9px 0;border-bottom:1px solid #f0ece0;
+  }
+  .menu-card li:last-child{ border-bottom:none; }
+  .menu-card li::before{ content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--green); }
+
+  /* includes */
+  .includes{ background:var(--green);color:#fff;border-radius:16px;padding:18px 22px; }
+  .includes .label{ color:#fff; }
+  .includes .sub{ color:var(--yellow-soft); }
+  .inc-row{ display:flex;align-items:center;gap:12px;font-size:16px;font-weight:700;padding:7px 0; }
+  .inc-row .tick{
+    flex:none;width:25px;height:25px;border-radius:50%;background:var(--yellow);color:var(--green-deep);
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;
+  }
+  .inc-row small{ display:block;font-weight:400;font-size:12.5px;color:rgba(255,255,255,0.75); }
+
+  /* toppings */
+  .chips{ display:flex;flex-wrap:wrap;gap:8px;justify-content:center; }
+  .chip{
+    background:var(--yellow-light);border:1.5px solid var(--yellow);color:var(--green-dark);
+    font-weight:700;font-size:13.5px;padding:7px 14px;border-radius:30px;
+  }
+
+  /* add ons */
+  .addon-row{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:11px 16px;border-radius:12px;background:#fff;border:1px solid #efe9da;margin-bottom:8px;
+  }
+  .addon-row:last-child{ margin-bottom:0; }
+  .addon-name{ font-weight:800;font-size:15px;color:var(--ink); }
+  .addon-name small{ display:block;font-weight:400;font-size:12px;color:var(--grey);margin-top:1px; }
+  .addon-price{
+    flex:none;font-family:'Playfair Display',serif;font-weight:800;font-size:19px;color:var(--green-dark);
+    background:var(--yellow-light);border-radius:10px;padding:5px 11px;white-space:nowrap;
+  }
+
+  /* footer */
+  .foot{
+    margin:24px 40px 36px;background:linear-gradient(160deg,var(--green-dark),var(--green-deep));
+    color:#fff;text-align:center;padding:24px 30px;border-radius:18px;
+  }
+  .foot .cta{ font-family:'Playfair Display',serif;font-weight:800;font-size:28px;margin-bottom:8px; }
+  .foot .mins{ font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--yellow-soft);font-weight:900; }
+  .foot .enq{ margin-top:12px;font-size:16px;font-weight:700;letter-spacing:0.04em;color:rgba(255,255,255,0.9); }
+</style>
+</head>
+<body>
+  <div class="poster">
+
+    <div class="head">
+      <div class="brand">Leafy Flavours presents</div>
+      <span class="kicker">Live Dosa Counter</span>
+      <div class="title">Unlimited <span class="pop">Dosa Feast</span></div>
+      <div class="tag">Crisp · Golden · Made to Order</div>
+    </div>
+
+    <div class="photo-wrap">
+      <img class="photo" src="images/livecounter-dosa.jpg" alt="Live dosa counter"/>
+      <div class="price-badge">
+        <div class="from">Starting from</div>
+        <div class="amt">$30</div>
+        <div class="pp">per person</div>
+      </div>
+    </div>
+
+    <p class="intro">
+      Wow your guests with a <b>live dosa counter</b> — crisp, golden and sizzling straight off
+      the pan. Every dosa below is <b>included</b> and served unlimited, made fresh to order
+      right in front of them.
+    </p>
+
+    <div class="grid">
+      <!-- LEFT -->
+      <div>
+        <div class="block">
+          <div class="label">The Dosa Menu</div>
+          <div class="sub">All Included at $30 — No Need to Choose</div>
+          <div class="menu-card">
+            <ul>
+              <li>Mysuru Masala Dosa</li>
+              <li>Benne Masala Dosa</li>
+              <li>Plain Dosa</li>
+              <li>Onion Chilli Uttapam</li>
+              <li>Onion Capsicum Uttapam</li>
+            </ul>
+          </div>
+        </div>
+        <div class="block">
+          <div class="includes">
+            <div class="label">Every Plate Includes</div>
+            <div class="sub">No Extra Charge</div>
+            <div class="inc-row"><span class="tick">✓</span> Fresh Coconut Chutney</div>
+            <div class="inc-row"><span class="tick">✓</span> Hot Sambar</div>
+            <div class="inc-row"><span class="tick">✓</span>
+              <div>Choice of Rice Item <small>Ask us about the options</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div>
+        <div class="block">
+          <div class="label">Load It Up</div>
+          <div class="sub">Choose Any 3 Toppings — Included</div>
+          <div class="chips">
+            <span class="chip">Cheese</span>
+            <span class="chip">Onion</span>
+            <span class="chip">Capsicum</span>
+            <span class="chip">Chilli</span>
+            <span class="chip">Corn</span>
+            <span class="chip">Tomato</span>
+            <span class="chip">Beetroot</span>
+            <span class="chip">&amp; more on request</span>
+          </div>
+        </div>
+        <div class="block">
+          <div class="label">Make It a Feast</div>
+          <div class="sub">Add-Ons to Elevate Your Spread</div>
+          <div class="addon-row">
+            <div class="addon-name">Live Akki Rotti <small>Made fresh at the counter</small></div>
+            <div class="addon-price">+ $3</div>
+          </div>
+          <div class="addon-row">
+            <div class="addon-name">Kesari Bath <small>Warm saffron semolina sweet</small></div>
+            <div class="addon-price">+ $2</div>
+          </div>
+          <div class="addon-row">
+            <div class="addon-name">Shavige Bath <small>Spiced South-Indian vermicelli</small></div>
+            <div class="addon-price">+ $2</div>
+          </div>
+          <div class="addon-row">
+            <div class="addon-name">Veg Saagu <small>Karnataka-style coconut veg curry</small></div>
+            <div class="addon-price">+ $2</div>
+          </div>
+          <div class="addon-row">
+            <div class="addon-name">Extra Toppings <small>Beyond your 3 included</small></div>
+            <div class="addon-price">+ 50¢ ea</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div class="cta">Book Your Dosa Feast</div>
+      <div class="mins">Minimum 25 Guests</div>
+      <div class="enq">Get in touch to check dates &amp; build your menu</div>
+      <div class="contact">Call or WhatsApp &nbsp;<span>0470 382 859</span></div>
+    </div>
+
+  </div>
+  <script>
+    if (location.search.indexOf('branded') !== -1) document.body.classList.add('branded');
+  </script>
+</body>
+</html>
