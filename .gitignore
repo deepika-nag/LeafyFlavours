@@ -12,3 +12,18 @@ LeafyLFavours chaats grazing menu.pdf
 
 # Claude internals
 .claude/
+CLAUDE.md
+.planning/
+
+# macOS junk
+.DS_Store
+
+# HEIF source photos (HEIC already ignored above)
+*.heif
+*.HEIF
+
+# Customer testimonial screenshots — contain real names, handles, profile
+# photos and private messages. This repo is public via GitHub Pages, so these
+# stay local only.
+testimonials/
+testimonials */
