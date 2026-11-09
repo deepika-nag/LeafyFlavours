@@ -173,7 +173,7 @@
         <div class="exp-card-sub">Traditional Karnataka Sit-Down</div>
         <div class="exp-card-best">Intimate milestone celebrations · Parents' birthdays · Family visits · Festivals · 10-20 guests</div>
         <div class="exp-card-estimator">
-          <p class="est-note">6 courses · 12 items · brass-styled sit-down setup, from $32 per person</p>
+          <p class="est-note">6 courses · 12 items · brass-styled sit-down setup, from $36 per person</p>
           <div class="est-field">
             <label>Guests (10-20)</label>
             <input type="number" id="guests-elleoota" min="10" max="20" placeholder="e.g. 12" oninput="calcElleOota()"/>
@@ -500,7 +500,7 @@
 
       <div class="exp-note" style="background: var(--teal-light); border-color: var(--teal); color: var(--teal); text-align: left; line-height: 1.8;">
         <strong>What's included:</strong> Brass-styled table setup · Decorations · Detailed printed menu card per guest, we care for every detail<br/>
-        <strong>Starts from $32 per person</strong> · Minimum 10 guests · Maximum 20 guests<br/>
+        <strong>Starts from $36 per person</strong> · Minimum 12 guests · Maximum 20 guests<br/>
         A curated welcome board can be added for $20. Talk to us if you'd like the setup themed to match your celebration.<br/>
         <em>Travel fee applies based on your location. Happy to customise, just ask.</em>
       </div>
@@ -834,9 +834,9 @@
   function calcElleOota() {
     var g = parseInt(document.getElementById('guests-elleoota').value) || 0;
     if (!g) { showPrice('price-elleoota', '', false); return; }
-    if (g < 10) { showPrice('price-elleoota', 'Minimum 10 guests', true); return; }
+    if (g < 12) { showPrice('price-elleoota', 'Minimum 12 guests', true); return; }
     if (g > 20) { showPrice('price-elleoota', 'Maximum 20 guests', true); return; }
-    showPrice('price-elleoota', 'Starts from $' + (32 * g), false);
+    showPrice('price-elleoota', 'Starts from $' + (36 * g), false);
   }
 
   function calcOpening() {
