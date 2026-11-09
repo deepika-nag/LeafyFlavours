@@ -540,7 +540,7 @@ def elle_oota_page():
         '3',
         'ELLE OOTA HERITAGE STYLE',
         'Traditional Karnataka Sit-Down Experience',
-        'Intimate milestone celebrations  ·  Parents\' birthdays  ·  Family visits  ·  Small gatherings (8-20 guests)',
+        'Intimate milestone celebrations  ·  Parents\' birthdays  ·  Family visits  ·  Small gatherings (12-20 guests)',
     ))
     e.append(Spacer(1, 0.3 * cm))
     e.append(Paragraph(
